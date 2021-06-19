@@ -1,6 +1,6 @@
-# React Bookstore
+# XYZ Finance
 
-This project is a simple bookstore using create-react-app.
+XZY Finance is a chart viewer of current stock prices. It has a straight-forward style, fast and clear. This is the Capstone project for React/Redux at Microverse.
 
 ## Live demo
 
@@ -10,6 +10,7 @@ This project is a simple bookstore using create-react-app.
 
 - JavaScript
 - React
+- Redux
 - Webpack
 
 ## How to start the project from your Local enviroment
