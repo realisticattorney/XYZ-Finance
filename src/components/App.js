@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React from 'react';
-import StocksList from '../containers/StocksList';
+import StocksContainer from '../containers/StocksContainer';
 
 function App() {
   return (
     <div>
-      <StocksList />
+      <StocksContainer />
       <hr className="padding" />
     </div>
   );

@@ -1,8 +1,10 @@
-/* eslint-disable import/no-cycle */
-import { combineReducers } from 'redux';
-import reducer from './stocks';
-import filter from './filter';
+/* eslint-disable */
+import { combineReducers, applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import stocksReducer from './reducer';
 
-const reducersCombined = combineReducers({ stocks: reducer, filter });
+const middlewares = [thunk];
+// export const rootReducer = combineReducers({ stocksReducer });
+const store = createStore(stocksReducer, applyMiddleware(thunk));
 
-export default reducersCombined;
+export default store;

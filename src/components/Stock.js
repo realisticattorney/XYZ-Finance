@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import graph from '../assets/graph.png';
 /* eslint-disable array-callback-return */
 function Stock({ stock }) {
   const {
-    logo, symbol, title, category, id,
+    logo, symbol, price, exchange,
   } = stock;
 
   function importAll(r) {
@@ -19,10 +20,10 @@ function Stock({ stock }) {
 
   return (
     <div className="book">
-      <p className="category">{id}</p>
-      <p className="title">{title}</p>
+      {/* <p className="category">{id}</p> */}
+      <p className="title">{price}</p>
       <p className="author">{symbol}</p>
-      <p className="category">{category}</p>
+      <p className="category">{exchange}</p>
       <img src={images[logo].default} alt={symbol} className="logos" />
       <div className="rect">
         <div className="circle">
@@ -41,9 +42,8 @@ function Stock({ stock }) {
 
 Stock.propTypes = {
   stock: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    exchange: PropTypes.string.isRequired,
     symbol: PropTypes.string.isRequired,
     logo: PropTypes.string.isRequired,
   }).isRequired,
