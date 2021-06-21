@@ -8,15 +8,15 @@ function Stock({ stock }) {
     logo, symbol, price, exchange,
   } = stock;
 
-  function importAll(r) {
-    const images = {};
-    r.keys().map((item) => {
-      images[item.replace('./', '')] = r(item);
-    });
-    return images;
-  }
+  // function importAll(r) {
+  //   const images = {};
+  //   r.keys().map((item) => {
+  //     images[item.replace('./', '')] = r(item);
+  //   });
+  //   return images;
+  // }
 
-  const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
+  // const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
 
   return (
     <div className="book">
@@ -24,10 +24,10 @@ function Stock({ stock }) {
       <p className="title">{price}</p>
       <p className="author">{symbol}</p>
       <p className="category">{exchange}</p>
-      <img src={images[logo].default} alt={symbol} className="logos" />
+      {/* <img src={images[logo].default} alt={symbol} className="logos" /> */}
       <div className="rect">
         <div className="circle">
-          <img src={graph} alt="Logo" />
+          {/* <img src={graph} alt="Logo" /> */}
         </div>
       </div>
       <div className="hr" />
