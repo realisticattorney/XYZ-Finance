@@ -1,10 +1,13 @@
 /* eslint-disable */
 const initialState = [];
 
+
+
 const stocksReducer = (state = initialState, action) => {
+  console.log(state)
   switch (action.type) {
     case 'FETCH_STOCKS':
-        return action.payload;
+        return action.payload
   //     return {
   //       ...state,
   //       stocks: action.payload,
