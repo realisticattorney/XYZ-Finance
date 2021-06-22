@@ -2,6 +2,16 @@
 
 XZY Finance is a chart viewer of current stock prices. It has a straight-forward style, fast and clear. This is the Capstone project for React/Redux at Microverse.
 
+pink #DD29B1
+green #08C9A0
+
+background #13192F
+hovered background #1D2339
+color #D9DFEA
+sub color #81879D
+
+
+
 ## Live demo
 
 [live demo](https://realisticbookstore.herokuapp.com/)

@@ -3,34 +3,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import graph from '../assets/graph.png';
 import { Link } from "react-router-dom";
+/* eslint-disable array-callback-return */
 function Stock({ stock, lol }) {
   const {
-   symbol, price, exchange,
+   symbol, price, companyName,
   } = stock;
+  console.log("LOOOOOOL")
   console.log(stock)
+  console.log("LOOOOOOL")
   console.log(lol)
+  // function importAll(r) {
+  //   const images = {};
+  //   r.keys().map((item) => {
+  //     images[item.replace('./', '')] = r(item);
+  //   });
+  //   return images;
+  // }
+
+  // const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
 
   return (
+           <Link to={`/stock/${symbol}`}>
     <div className="book">
+    <div className="left-side">
       {/* <p className="category">{id}</p> */}
-      <p className="title">{price}</p>
+      <p className="category">{companyName}</p>
       <p className="author">{symbol}</p>
-      <p className="category">{exchange}</p>
       {/* <img src={images[logo].default} alt={symbol} className="logos" /> */}
-      <div className="rect">
-        <div className="circle">
+      </div>
+        <div className="right-side">
           {/* <img src={graph} alt="Logo" /> */}
+      <p className="title">{price}</p>
         </div>
       </div>
-      <div className="hr" />
-      <div className="update">
-        <p className="chapter">{lol}</p>
-        <p className="intro">Introduction</p>
-           <Link to={`/stock/${symbol}`}>
-        <button type="button">Details</button>
         </Link>
-      </div>
-    </div>
   );
 }
 
@@ -39,6 +45,7 @@ Stock.propTypes = {
     price: PropTypes.number.isRequired,
     exchange: PropTypes.string.isRequired,
     symbol: PropTypes.string.isRequired,
+    // logo: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default Stock;

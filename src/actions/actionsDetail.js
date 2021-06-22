@@ -16,9 +16,6 @@ export const fetchSelectedStockRequest = () => ({
  });
  
 
-
-
-// eslint-disable-next-line func-names
 export const fetchSelectedStock = symbol => function (dispatch) {
    dispatch(fetchSelectedStockRequest());
    axios
