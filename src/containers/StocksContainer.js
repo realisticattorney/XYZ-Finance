@@ -14,7 +14,15 @@ const StocksContainer = () => {
 
 
 //   const filteredStocks = filter !== 'All' ? state.filter((stock) => stock.category === filter) : state;
+  const renderStocks = () => {
+     if(state.loading) {
+        return <h1>Loading</h1>
+     } 
+     return state.stocks.map((stock) => (
+      <Stock key={stock.symbol} stock={stock} />
+    ))
 
+  }
 
   return (
     <>
@@ -30,6 +38,7 @@ const StocksContainer = () => {
           {/* {state.map((stock) => (
             <Stock key={stock.symbol} stock={stock} />
           ))} */}
+          { renderStocks()}
           {/* <ul className="users">
             {state.map((user) => {
               const { login, symbol, price } = user;
