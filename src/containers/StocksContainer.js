@@ -27,9 +27,9 @@ const StocksContainer = () => {
       </nav>
       <div>
         <div className="books-cms">
-          {state.map((stock) => (
+          {/* {state.map((stock) => (
             <Stock key={stock.symbol} stock={stock} />
-          ))}
+          ))} */}
           {/* <ul className="users">
             {state.map((user) => {
               const { login, symbol, price } = user;
