@@ -5,17 +5,21 @@ import PropTypes from 'prop-types';
 const CategoryFilter = ({ handleFilterChange }) => {
   const filter = [
     'All',
-    'Crypto',
-    'Forex',
-    'NASDAQ',
-    'Dow Jones',
+    'Application',
+    'Infrastructure',
   ];
+
+  console.log(handleFilterChange)
+  console.log(handleFilterChange)
+  console.log(handleFilterChange)
+  console.log(handleFilterChange)
+  console.log(handleFilterChange)
 
   return (
     <select onChange={handleFilterChange} name="filter" className="filter-top">
-      {filter.map((stock) => (
-        <option key={stock.symbol} value={stock.exchangeShortName}>
-          {stock.symbol}
+      {filter.map((category) => (
+        <option key={category} value={category}>
+          {category}
         </option>
       ))}
     </select>

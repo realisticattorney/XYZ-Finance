@@ -1,17 +1,15 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import graph from '../assets/graph.png';
 import { Link } from "react-router-dom";
 /* eslint-disable array-callback-return */
 function Stock({ stock, lol }) {
   const {
    symbol, price, companyName,
   } = stock;
-  console.log("LOOOOOOL")
   console.log(stock)
-  console.log("LOOOOOOL")
   console.log(lol)
+
   // function importAll(r) {
   //   const images = {};
   //   r.keys().map((item) => {
@@ -32,7 +30,6 @@ function Stock({ stock, lol }) {
       {/* <img src={images[logo].default} alt={symbol} className="logos" /> */}
       </div>
         <div className="right-side">
-          {/* <img src={graph} alt="Logo" /> */}
       <p className="title">{price}</p>
         </div>
       </div>

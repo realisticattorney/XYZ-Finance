@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchStocks } from '../actions/actions';
 import Stock from '../components/Stock';
@@ -8,11 +8,17 @@ import CategoryFilter from '../components/CategoryFilter';
 const StocksContainer = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.allStocks);
+
+  const { sector , setSector } = useState('')
+
   useEffect(() => {
-    dispatch(fetchStocks());
+    dispatch(fetchStocks(sector));
   }, []);
 
-
+  useEffect(() => {
+   dispatch(fetchStocks(sector));
+ }, [sector]);
+ 
 //   const filteredStocks = filter !== 'All' ? state.filter((stock) => stock.category === filter) : state;
   const renderStocks = () => {
      if(state.loading) {
@@ -24,6 +30,10 @@ const StocksContainer = () => {
       return <Stock key={id} stock={stock} lol={id} />}
     )
 
+  }
+
+  const changeFilter = e => {
+    return setSector(e)
   }
 
   return (
