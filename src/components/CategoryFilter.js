@@ -13,9 +13,9 @@ const CategoryFilter = ({ handleFilterChange }) => {
 
   return (
     <select onChange={handleFilterChange} name="filter" className="filter-top">
-      {filter.map((category) => (
-        <option key={category} value={category}>
-          {category}
+      {filter.map((stock) => (
+        <option key={stock.symbol} value={stock.exchangeShortName}>
+          {stock.symbol}
         </option>
       ))}
     </select>

@@ -1,13 +1,17 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import graph from '../assets/graph.png';
 /* eslint-disable array-callback-return */
-function Stock({ stock }) {
+function Stock({ stock, lol }) {
   const {
    symbol, price, exchange,
   } = stock;
-
+  console.log("LOOOOOOL")
+  console.log(stock)
+  console.log("LOOOOOOL")
+  console.log(lol)
   // function importAll(r) {
   //   const images = {};
   //   r.keys().map((item) => {
@@ -32,9 +36,11 @@ function Stock({ stock }) {
       </div>
       <div className="hr" />
       <div className="update">
-        <p className="chapter">Current Chapter</p>
+        <p className="chapter">{lol}</p>
         <p className="intro">Introduction</p>
-        <button type="button">Update Progress</button>
+        <Link to={`/product/${lol}`}>
+        <button type="button">Details</button>
+        </Link>
       </div>
     </div>
   );

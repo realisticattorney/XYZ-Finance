@@ -5,7 +5,21 @@ const initialState = {
   error: null,
 };
 
-const stocksReducer = (state = initialState, action) => {
+
+export const selectedStocksReducer = (state = {}, action) => {
+  console.log(state);
+  switch (action.type) {
+    case 'SELECTED_STOCKS':
+      return { ...state, ...payload };
+    case 'REMOVE_SELECTED_STOCKS':
+      return {};
+    default:
+      return state;
+  }
+};
+
+
+export const stocksReducer = (state = initialState, action) => {
   console.log(state);
   switch (action.type) {
     case 'FETCH_STOCKS_REQUEST':
@@ -30,5 +44,3 @@ const stocksReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default stocksReducer;

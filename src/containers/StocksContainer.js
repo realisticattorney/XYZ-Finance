@@ -7,7 +7,7 @@ import CategoryFilter from '../components/CategoryFilter';
 
 const StocksContainer = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.allStocks);
   useEffect(() => {
     dispatch(fetchStocks());
   }, []);
@@ -18,9 +18,11 @@ const StocksContainer = () => {
      if(state.loading) {
         return <h1>Loading</h1>
      } 
-     return state.stocks.map((stock) => (
-      <Stock key={stock.symbol} stock={stock} />
-    ))
+     
+     return state.stocks.map((stock) => {
+      const id = Math.floor(Math.random() * 100000)
+      return <Stock key={id} stock={stock} lol={id} />}
+    )
 
   }
 
@@ -35,16 +37,7 @@ const StocksContainer = () => {
       </nav>
       <div>
         <div className="books-cms">
-          {/* {state.map((stock) => (
-            <Stock key={stock.symbol} stock={stock} />
-          ))} */}
           { renderStocks()}
-          {/* <ul className="users">
-            {state.map((user) => {
-              const { login, symbol, price } = user;
-              return <li key={symbol}></li>;
-            })}
-          </ul> */}
         </div>
       </div>
     </>

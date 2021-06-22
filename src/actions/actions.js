@@ -19,10 +19,19 @@ export const stocksFailure = (error) => ({
 //   filter,
 // });
 
-export const fetchStocks = () => (dispatch) => {
+const STOCK_LIST_URL = `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&dividendMoreThan=0&limit=20&apikey=d289d0796e744a042b2b86117a54900a`;
+const STOCK_GAINERS = `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&dividendMoreThan=0&limit=20&apikey=d289d0796e744a042b2b86117a54900a`;
+const STOCK_LOSERS = `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&dividendMoreThan=0&limit=20&apikey=d289d0796e744a042b2b86117a54900a`;
+
+export const fetchStocks = (sectorURL) => (dispatch) => {
+  let sector = '';
+  if (sectorURL === 'Application') sector = 'industry=Software—Application&';
+  if (sectorURL === 'Infrastructure')
+    sector = 'industry=Software—Infrastructure&';
+
   dispatch(stocksRequest());
   Axios.get(
-    'https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&dividendMoreThan=0&limit=20&apikey=d289d0796e744a042b2b86117a54900a',
+    `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&${sector}sector=Technology&limit=40&apikey=d289d0796e744a042b2b86117a54900a`,
     { mode: 'cors' }
   )
     .then((response) => {
