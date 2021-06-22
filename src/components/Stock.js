@@ -3,24 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import graph from '../assets/graph.png';
 import { Link } from "react-router-dom";
-/* eslint-disable array-callback-return */
 function Stock({ stock, lol }) {
   const {
    symbol, price, exchange,
   } = stock;
-  console.log("LOOOOOOL")
   console.log(stock)
-  console.log("LOOOOOOL")
   console.log(lol)
-  // function importAll(r) {
-  //   const images = {};
-  //   r.keys().map((item) => {
-  //     images[item.replace('./', '')] = r(item);
-  //   });
-  //   return images;
-  // }
-
-  // const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
 
   return (
     <div className="book">
@@ -39,7 +27,7 @@ function Stock({ stock, lol }) {
         <p className="chapter">{lol}</p>
         <p className="intro">Introduction</p>
            <Link to={`/stock/${symbol}`}>
-        <button type="button">Update Progress</button>
+        <button type="button">Details</button>
         </Link>
       </div>
     </div>
@@ -51,7 +39,6 @@ Stock.propTypes = {
     price: PropTypes.number.isRequired,
     exchange: PropTypes.string.isRequired,
     symbol: PropTypes.string.isRequired,
-    // logo: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default Stock;
