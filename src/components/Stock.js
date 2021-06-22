@@ -5,7 +5,7 @@ import graph from '../assets/graph.png';
 /* eslint-disable array-callback-return */
 function Stock({ stock }) {
   const {
-    logo, symbol, price, exchange,
+   symbol, price, exchange,
   } = stock;
 
   // function importAll(r) {
@@ -42,10 +42,10 @@ function Stock({ stock }) {
 
 Stock.propTypes = {
   stock: PropTypes.shape({
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     exchange: PropTypes.string.isRequired,
     symbol: PropTypes.string.isRequired,
-    logo: PropTypes.string.isRequired,
+    // logo: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default Stock;
