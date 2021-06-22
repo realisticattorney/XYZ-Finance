@@ -1,40 +1,33 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { fetchStocks } from '../actions/actions';
 import Stock from '../components/Stock';
+import PropTypes from 'prop-types';
 import CategoryFilter from '../components/CategoryFilter';
 
-const StocksContainer = () => {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.allStocks);
-
-  const { sector , setSector } = useState('')
+const StocksContainer = ({ allStocks, fetchStocks }) => {
+  const sector = useSelector((state) => state.sectorURL);
 
   useEffect(() => {
-    dispatch(fetchStocks(sector));
-  }, []);
+    fetchStocks(sector);
+  }, [sector]);
 
-  useEffect(() => {
-   dispatch(fetchStocks(sector));
- }, [sector]);
- 
-//   const filteredStocks = filter !== 'All' ? state.filter((stock) => stock.category === filter) : state;
+  //   const filteredStocks = filter !== 'All' ? state.filter((stock) => stock.category === filter) : state;
   const renderStocks = () => {
-     if(state.loading) {
-        return <h1>Loading</h1>
-     } 
-     
-     return state.stocks.map((stock) => {
-      const id = Math.floor(Math.random() * 100000)
-      return <Stock key={id} stock={stock} lol={id} />}
-    )
+    if (allStocks.loading) {
+      return <h1>Loading</h1>;
+    }
 
-  }
+    return allStocks.stocks.map((stock) => {
+      const id = Math.floor(Math.random() * 100000);
+      return <Stock key={id} stock={stock} lol={id} />;
+    });
+  };
 
-  const changeFilter = e => {
-    return setSector(e)
-  }
+  const changeFilter = (e) => {
+    console.log(e);
+  };
 
   return (
     <>
@@ -46,12 +39,34 @@ const StocksContainer = () => {
         />
       </nav>
       <div>
-        <div className="books-cms">
-          { renderStocks()}
-        </div>
+        <div className="books-cms">{renderStocks()}</div>
       </div>
     </>
   );
 };
 
-export default StocksContainer;
+const mapStateToProps = (state) => ({
+  allStocks: state.allStocks,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchStocks: (sector) => dispatch(fetchStocks(sector)),
+});
+
+StocksContainer.propTypes = {
+  allStocks: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    stocks: PropTypes.instanceOf(Array).isRequired,
+    error: PropTypes.string,
+  }),
+  fetchStocks: PropTypes.func.isRequired,
+};
+
+StocksContainer.defaultProps = {
+  allStocks: {
+    stocks: [],
+    loading: false,
+  },
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(StocksContainer);
