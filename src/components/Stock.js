@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
 import graph from '../assets/graph.png';
+import { Link } from "react-router-dom";
 /* eslint-disable array-callback-return */
 function Stock({ stock, lol }) {
   const {
@@ -38,8 +38,8 @@ function Stock({ stock, lol }) {
       <div className="update">
         <p className="chapter">{lol}</p>
         <p className="intro">Introduction</p>
-        <Link to={`/product/${lol}`}>
-        <button type="button">Details</button>
+           <Link to={`/stock/${symbol}`}>
+        <button type="button">Update Progress</button>
         </Link>
       </div>
     </div>

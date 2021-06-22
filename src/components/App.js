@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import StocksContainer from '../containers/StocksContainer';
-// import ProductDetails from "./containers/ProductDetails";
+import StockDetails from "../containers/StockDetails";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={StocksContainer} />
-          {/* <Route path="/product/:productId" component={ProductDetails} /> */}
+          <Route path="/stock/:symbol" component={StockDetails} />
           <Route>404 Not Found!</Route>
         </Switch>
       </Router>
