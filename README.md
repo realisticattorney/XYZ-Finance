@@ -16,11 +16,12 @@ XZY Finance is a chart viewer of current stock prices. It has a straight-forward
 ## How to start the project from your Local enviroment
 
 - Open your terminal and cd where you want to store the project
-- Run the following command - `git clone https://github.com/realisticattorney/Book-store`
-- Cd into the directory - `cd Book-Store`
+- Run the following command - `git clone https://github.com/realisticattorney/XYZ-Finance`
+- Cd into the directory - `cd XYZ-Finance`
 - Run `npm install` to install all dependencies
 - Run `npm start` or `yarn start`, this automatically open your browser and the app
-- If not, open your browser manually and copy paster http://localhost:3000
+- **** The app already has throaway API keys. In case of error replace the value of api var to api = "557441206e00b345620f6b0d3a915fd7"; at src\actions\APIkeys.js
+- Open your browser manually and copy paster http://localhost:3000
 
 ## Author
 

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import Axios from 'axios';
-
+import { api } from './APIkeys';
 export const stocksRequest = () => ({
   type: 'FETCH_STOCKS_REQUEST',
 });
@@ -14,23 +14,22 @@ export const stocksFailure = (error) => ({
   payload: error,
 });
 
-export const fetchStocks = (sectorURL) => function (dispatch) {
-  let sector = 'https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&limit=40&apikey=8dba008a494731618b1b459542cd6ff9';
-  if (sectorURL === 'Application') sector = 'https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&industry=Software—Application&sector=Technology&limit=40&apikey=8dba008a494731618b1b459542cd6ff9';
-  if (sectorURL === 'Infrastructure')
-    sector = 'https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&industry=Software—Infrastructure&sector=Technology&limit=40&apikey=8dba008a494731618b1b459542cd6ff9';
+export const fetchStocks = (sectorURL) =>
+  function (dispatch) {
+    let sector = `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&limit=40&apikey=${api}`;
+    if (sectorURL === 'Application')
+      sector = `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&industry=Software—Application&sector=Technology&limit=40&apikey=${api}`;
+    if (sectorURL === 'Infrastructure')
+      sector = `https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&industry=Software—Infrastructure&sector=Technology&limit=40&apikey=${api}`;
 
-  dispatch(stocksRequest());
-  Axios.get(
-    sector,
-    { mode: 'cors' }
-  )
-    .then((response) => {
-      const { data } = response;
-      console.log(data);
-      dispatch(stockSuccess(data));
-    })
-    .catch((error) => {
-      dispatch(stocksFailure(error.message));
-    });
-};
+    dispatch(stocksRequest());
+    Axios.get(sector, { mode: 'cors' })
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+        dispatch(stockSuccess(data));
+      })
+      .catch((error) => {
+        dispatch(stocksFailure(error.message));
+      });
+  };

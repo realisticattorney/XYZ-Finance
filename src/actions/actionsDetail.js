@@ -1,5 +1,6 @@
 /* eslint-disable */
 import axios from 'axios';
+import { api } from './APIkeys';
 
 export const fetchSelectedStockRequest = () => ({
    type: 'FETCH_SEL_STOCK_REQUEST',
@@ -19,7 +20,7 @@ export const fetchSelectedStockRequest = () => ({
 export const fetchSelectedStock = symbol => function (dispatch) {
    dispatch(fetchSelectedStockRequest());
    axios
-     .get(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=d289d0796e744a042b2b86117a54900a`, { mode: 'cors' })
+     .get(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${api}`, { mode: 'cors' })
      .then(response => {
        const { data } = response;
        dispatch(fetchSelectedStockSuccess(data[0]));
