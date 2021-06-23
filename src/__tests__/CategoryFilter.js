@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import CategoryFilter from '../components/CategoryFilter';
-import store from '../Reducers';
+import store from '../reducers/index';
 
 describe('rendered CategoryFilter', () => {
   let renderedComponent;
