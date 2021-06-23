@@ -45,15 +45,15 @@ a:active {
   align-content: center;
 }
 .det-price {
-  margin: 10px 0px;
+  margin: 7px 0px;
 }
 
 .det-left-side {
   margin: auto 20px;
-  font-size: 50px;
-  padding: 0px;
-  height: 90px;
-  width: 220px;
+  font-size: 40px;
+  padding-right: 8px;
+  height: 70px;
+  width: 200px;
   color: #d9dfea;
   background-color: #dd29b1;
   font-weight: bolder;
@@ -213,5 +213,34 @@ a:active {
   height: 65px;
   justify-content: space-around;
   align-items: center;
+}
+.det-top-title {
+  font-size: 23px;
+  margin-top: 10px;
+}
+
+.det-top-subtitle {
+  font-size: 15px;
+}
+
+.det-left-side {
+  margin: auto 10px;
+  font-size: 23px;
+  height: 32px;
+  padding: 4px;
+  width: 100px;
+  background-color: #dd29b1;
+  font-weight: bolder;
+  border-radius: 7px;
+  text-align: right;
+}
+
+.det-price {
+  margin: 0px 0px;
+}
+
+.det-right-side {
+  font-size: 12px;
+  margin: auto 0px;
 }
 }
