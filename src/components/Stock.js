@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 /* eslint-disable array-callback-return */
 function Stock({ stock }) {
   const {
@@ -14,11 +14,10 @@ function Stock({ stock }) {
   //   });
   //   return images;
   // }
-
   // const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
 
   return (
-    <Link to={`/stock/${symbol}`}>
+    <a href={`/stock/${symbol}`}>
       <div className="book">
         <div className="left-side">
           {/* <p className="category">{id}</p> */}
@@ -30,7 +29,7 @@ function Stock({ stock }) {
           <p className="title">{price}</p>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 
