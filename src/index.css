@@ -107,13 +107,13 @@ a:active {
   margin: auto auto;
   justify-content: center;
   max-width: 1100px;
-  grid-template-columns: 300px 1fr 160px;
+  grid-template-columns: 300px 1fr 140px;
   border: 1px solid #81879d;
   background-color: #13192f;
   border-bottom: 4px;
   border-left: 0px;
   border-right: 0px;
-  padding: 10px 12px 5px 27px;
+  padding: 10px 27px 5px 27px;
   position: relative;
 }
 
@@ -149,7 +149,7 @@ a:active {
 
 .author {
   color: #81879d;
-  padding-left: 11px;
+  padding-left: 0px;
   font-size: 15px;
   font-weight: 300;
   margin-top: -17px;
@@ -173,6 +173,45 @@ a:active {
 
 
 @media screen and (max-width: 550px) {
+  body { 
+  }
 
+  .category {
+    font-size: 14px;
+}
+.author {
+  padding-left: 0px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: -15px;
+}
+  .book {
+    grid-template-columns: 200px 1fr 80px;
+    padding: 0px 12px 0px 17px;
+  }
 
+  .title {
+    font-size: 14px;
+    padding: 2px 5px;
+    border-radius: 7px;
+    margin-top: 18px;
+}
+
+.filter-top {
+  width: 100px;
+  scrollbar-color: #81879d;
+  padding: 3px;
+  font-size: 11px;
+  background-color: #1d2339;
+}
+.book-app {
+  margin-right: 60px;
+  margin-left: 0px;
+  font-size: 25px;
+}
+.header {
+  height: 65px;
+  justify-content: space-around;
+  align-items: center;
+}
 }
