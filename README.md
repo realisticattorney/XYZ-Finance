@@ -1,6 +1,6 @@
 # XYZ Finance
 
-XZY Finance is a chart viewer of current stock prices. It has a straight-forward style, fast and clear. This is the Capstone project for React/Redux at Microverse.
+XZY Finance is a chart viewer of current stock prices. It has a straightforward style, fast and clear. This is the Capstone project for React/Redux at Microverse.
 
 ## Live demo
 
