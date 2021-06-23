@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Stock component 1`] = `
+<a
+  href="/stock/AAPL"
+>
+  <div
+    className="book"
+  >
+    <div
+      className="left-side"
+    >
+      <p
+        className="category"
+      >
+        Apple Inc.
+      </p>
+      <p
+        className="author"
+      >
+        AAPL
+      </p>
+    </div>
+    <div
+      className="right-side"
+    >
+      <p
+        className="title"
+      />
+    </div>
+  </div>
+</a>
+`;

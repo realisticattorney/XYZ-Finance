@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders StockDetail component 1`] = `
+<div
+  className="det"
+>
+  <div
+    className="det-top"
+  >
+    <p
+      className="det-top-title"
+    >
+       
+      Apple Inc.
+    </p>
+    <p
+      className="det-top-subtitle"
+    >
+       
+      AAPL
+    </p>
+  </div>
+  <div
+    className="det-middle"
+  >
+    <div
+      className="det-left-side"
+    >
+      <p
+        className="det-price"
+      >
+         
+      </p>
+    </div>
+    <div
+      className="det-right-side"
+    >
+      <p>
+         
+        Industry:
+        Consumer Electronics
+      </p>
+      <p>
+         
+        Country:
+        US
+      </p>
+      <p>
+         
+        Sector:
+      </p>
+    </div>
+  </div>
+</div>
+`;
