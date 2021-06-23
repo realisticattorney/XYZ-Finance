@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { fetchStocks } from '../actions/actions';
 import Stock from '../components/Stock';
@@ -7,13 +7,12 @@ import PropTypes from 'prop-types';
 import CategoryFilter from '../components/CategoryFilter';
 
 const StocksContainer = ({ allStocks, fetchStocks }) => {
-  const sector = useSelector((state) => state.sectorURL);
+  const sector = useSelector((state) => state.allStocks.sectorURL);
 
   useEffect(() => {
     fetchStocks(sector);
   }, [sector]);
 
-  //   const filteredStocks = filter !== 'All' ? state.filter((stock) => stock.category === filter) : state;
   const renderStocks = () => {
     if (allStocks.loading) {
       return <h1>Loading</h1>;
@@ -25,17 +24,17 @@ const StocksContainer = ({ allStocks, fetchStocks }) => {
     });
   };
 
-  const changeFilter = (e) => {
-    console.log(e);
+  const changeFilter = e => {
+    fetchStocks(e.target.value);
   };
-
+  
   return (
     <>
       <nav className="header">
         <h1 className="book-app">XYZ Finance</h1>
         <p className="booklist-nav">STOCKS</p>
         <CategoryFilter
-          handleFilterChange={(e) => changeFilter(e.target.value)}
+          handleFilterChange={changeFilter}
         />
       </nav>
       <div>

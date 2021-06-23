@@ -3,17 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ handleFilterChange }) => {
-  const filter = [
-    'All',
-    'Application',
-    'Infrastructure',
-  ];
 
-  console.log(handleFilterChange)
-  console.log(handleFilterChange)
-  console.log(handleFilterChange)
-  console.log(handleFilterChange)
-  console.log(handleFilterChange)
+  const filter = [
+    "All",
+    "Application",
+    "Infrastructure"
+  ]
 
   return (
     <select onChange={handleFilterChange} name="filter" className="filter-top">

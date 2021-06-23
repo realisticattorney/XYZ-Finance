@@ -20,7 +20,7 @@ export const stocksFailure = (error) => ({
 // });
 
 
-export const fetchStocks = (sectorURL) => (dispatch) => {
+export const fetchStocks = (sectorURL) => function (dispatch) {
   let sector = 'https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&sector=Technology&limit=40&apikey=8dba008a494731618b1b459542cd6ff9';
   if (sectorURL === 'Application') sector = 'https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=10000000000&industry=Software—Application&sector=Technology&limit=40&apikey=8dba008a494731618b1b459542cd6ff9';
   if (sectorURL === 'Infrastructure')
