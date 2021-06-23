@@ -32,7 +32,6 @@ const StocksContainer = ({ allStocks, fetchStocks }) => {
     <>
       <nav className="header">
         <h1 className="book-app">XYZ Finance</h1>
-        <p className="booklist-nav">STOCKS</p>
         <CategoryFilter
           handleFilterChange={changeFilter}
         />
