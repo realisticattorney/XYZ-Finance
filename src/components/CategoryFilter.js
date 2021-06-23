@@ -1,18 +1,16 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ handleFilterChange }) => {
-
   const filter = [
-    "All",
-    "Application",
-    "Infrastructure"
-  ]
+    'All',
+    'Application',
+    'Infrastructure',
+  ];
 
   return (
     <select onChange={handleFilterChange} name="filter" className="filter-top">
-     <option value="" disabled selected>Select Sector</option>
+      <option value="" disabled selected>Select Sector</option>
       {filter.map((category) => (
         <option key={category} value={category}>
           {category}

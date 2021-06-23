@@ -1,12 +1,10 @@
-/* eslint-disable */
 const initialState = {
   stocks: [],
   loading: false,
   error: null,
 };
 
-export const stocksReducer = (state = initialState, action) => {
-  console.log(state);
+const stocksReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_STOCKS_REQUEST':
       return {
@@ -30,3 +28,5 @@ export const stocksReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default stocksReducer;

@@ -1,9 +1,8 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { connect, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { fetchStocks } from '../actions/actions';
 import Stock from '../components/Stock';
-import PropTypes from 'prop-types';
 import CategoryFilter from '../components/CategoryFilter';
 
 const StocksContainer = ({ allStocks, fetchStocks }) => {
@@ -24,10 +23,10 @@ const StocksContainer = ({ allStocks, fetchStocks }) => {
     });
   };
 
-  const changeFilter = e => {
+  const changeFilter = (e) => {
     fetchStocks(e.target.value);
   };
-  
+
   return (
     <>
       <nav className="header">

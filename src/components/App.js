@@ -1,8 +1,7 @@
-/* eslint-disable */
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import StocksContainer from '../containers/StocksContainer';
-import StockDetails from "../containers/StockDetails";
+import StockDetails from '../containers/StockDetails';
 
 function App() {
   return (
