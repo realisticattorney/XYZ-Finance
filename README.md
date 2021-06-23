@@ -4,7 +4,7 @@ XZY Finance is a chart viewer of current stock prices. It has a straight-forward
 
 ## Live demo
 
-[live demo](https://realisticbookstore.herokuapp.com/)
+[live demo](https://xyzfinance.herokuapp.com/)
 
 ## Built With
 
