@@ -1,29 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
-/* eslint-disable array-callback-return */
+
 function Stock({ stock }) {
   const {
     symbol, price, companyName,
   } = stock;
 
-  // function importAll(r) {
-  //   const images = {};
-  //   r.keys().map((item) => {
-  //     images[item.replace('./', '')] = r(item);
-  //   });
-  //   return images;
-  // }
-  // const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
-
   return (
     <a href={`/stock/${symbol}`}>
       <div className="book">
         <div className="left-side">
-          {/* <p className="category">{id}</p> */}
           <p className="category">{companyName}</p>
           <p className="author">{symbol}</p>
-          {/* <img src={images[logo].default} alt={symbol} className="logos" /> */}
         </div>
         <div className="right-side">
           <p className="title">{price}</p>
@@ -39,7 +27,6 @@ Stock.propTypes = {
     exchange: PropTypes.string.isRequired,
     companyName: PropTypes.string.isRequired,
     symbol: PropTypes.string.isRequired,
-    // logo: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default Stock;
